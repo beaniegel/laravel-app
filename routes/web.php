@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware(['auth'])->group(function() {
+    Route::get('/', [DashboardController::class, 'show']);
+    Route::post('/logout', [LoginController::class, 'logout']);
+});
+
+Route::middleware(['guest'])->group(function() {
+    Route::get('/login', [LoginController::class, 'show'])->name('login');
+    Route::post('/login', [LoginController::class, 'login']);
+    Route::get('/users/create', [UserController::class, 'create']);
+    Route::post('/users', [UserController::class, 'store']);
 });
