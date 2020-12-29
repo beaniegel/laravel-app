@@ -6,6 +6,10 @@
         <link href="/css/app.css" rel="stylesheet">
     </head>
     <body>
-        @yield('content')
+            @auth
+                <x-navigation/>
+            @endauth
+            @yield('content')
     </body>
 </html>
+

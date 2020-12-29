@@ -3,8 +3,8 @@
 @section('content')
     <div class="grid lg:grid-cols-2 h-screen">
         <div class="hidden lg:flex flex-col bg-multi-gradient bg-cover px-12 py-12">
-            <h1 class="text-8xl text-white">My basic</br>Laravel App</h1>
-            <h2 class="text-4xl text-white">a simple multi-user login app</h2>
+            <h1 class="text-8xl text-white">Groopz</h1>
+            <h2 class="text-4xl text-white">beep boop</h2>
         </div>
         <div class="flex justify-center items-center bg-multi-gradient lg:bg-none bg-cover">
             <form class="w-3/5" method="POST" action="/login">
