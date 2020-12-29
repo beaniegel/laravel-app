@@ -17,6 +17,4 @@ class DashboardController extends Controller
             'users' => DB::table('users')->paginate(5)
         ]);
     }
-
-    public function create()
 }
